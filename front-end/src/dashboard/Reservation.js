@@ -55,7 +55,7 @@ export default function Reservation({ reservation, type }) {
             <>
               <Link
                 to={`/reservations/${reservation.reservation_id}/seat`}
-                className="btn btn-info btn-sm"
+                className="btn btn-dark btn-sm"
               >
                 Seat
               </Link>
@@ -68,7 +68,7 @@ export default function Reservation({ reservation, type }) {
               </button>
               <Link
                 to={`/reservations/${reservation.reservation_id}/edit`}
-                className="btn btn-warning btn-sm"
+                className="btn btn-secondary btn-sm"
               >
                 Edit
               </Link>

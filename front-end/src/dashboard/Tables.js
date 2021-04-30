@@ -32,6 +32,7 @@ export default function Reservation({ table }) {
             <button
               data-table-id-finish={table.table_id}
               onClick={handleFinish}
+              className="btn btn-sm btn-secondary"
             >
               Finish
             </button>
