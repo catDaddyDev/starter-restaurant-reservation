@@ -9,14 +9,14 @@ This repository is set up as a *monorepo*, meaning that the frontend and backend
 
 ## Database setup
 
-// back-end .env example -> Connects to database
+### back-end .env example -> Connects to database
 DATABASE_URL=enter-your-production-database-url-here
 DATABASE_URL_DEVELOPMENT=enter-your-development-database-url-here
 DATABASE_URL_TEST=enter-your-test-database-url-here
 DATABASE_URL_PREVIEW=enter-your-preview-database-url-here
 LOG_LEVEL=info
 
-// front-end .env example -> Connects to server
+### front-end .env example -> Connects to server
 REACT_APP_API_BASE_URL=http://localhost:5000
 ## Installation
 
