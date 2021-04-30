@@ -1,3 +1,4 @@
+import axios from "axios";
 /**
  * Defines the base URL for the API.
  * The default values is overridden by the `API_BASE_URL` environment variable.
@@ -66,4 +67,42 @@ export async function listReservations(params, signal) {
   return await fetchJson(url, { headers, signal }, [])
     .then(formatReservationDate)
     .then(formatReservationTime);
+}
+
+export async function createReservation(reservation) {
+  return await axios.post(`${API_BASE_URL}/reservations`, reservation);
+}
+
+export async function readReservation(id) {
+  const { data } = await axios.get(`${API_BASE_URL}/reservations/${id}`);
+  return data.data;
+}
+
+export async function updateReservation(id, reservation){
+  const { data } = await axios.put(`${API_BASE_URL}/reservations/${id}`, reservation);
+  return data.data;
+}
+
+export async function updateStatus(id, status){
+  const { data } = await axios.put(`${API_BASE_URL}/reservations/${id}/status`, status);
+  return data.data;
+}
+
+export async function listTables(signal) {
+  const url = new URL(`${API_BASE_URL}/tables`);
+
+  return await fetchJson(url, { headers, signal }, []);
+}
+
+export async function createTable(table) {
+  return await axios.post(`${API_BASE_URL}/tables`, table);
+}
+
+export async function updateTable(table_id, reservation_id) {
+  return await axios.put(`${API_BASE_URL}/tables/${table_id}/seat`, reservation_id);
+}
+
+export async function complete(table_id) {
+  const { data } = await axios.delete(`${API_BASE_URL}/tables/${table_id}/seat`);
+  return data.data; 
 }

@@ -1,4 +1,17 @@
+body {
+  background-color: rgb(241, 228, 223);
+}
+
 .side-bar {
-  background-color: #393a44;
+  background-color: #441212;
   min-width: 200px;
+}
+
+@media all and (max-width: 767px) {
+  .side-bar {
+    min-width: 100vw;
+    max-width: 100vw;
+    border-bottom: solid 4px black;
+    border-right: none;
+  }
 }
